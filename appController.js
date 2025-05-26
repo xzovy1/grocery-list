@@ -7,8 +7,8 @@ exports.groceryListGet = async (req, res) => {
 
 exports.addItemPost = async (req, res) => {
     const {item, category} = req.body
-    console.log(item)
-    // await db.addItem()
+    console.log(item, category)
+    await db.addItem(item, category)
     res.redirect('/');
 }
 

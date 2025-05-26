@@ -9,6 +9,11 @@
     <h1>Groceries</h1>
     <form action="/" method="POST">
         <input type="text" name="item" id="item">
+        <select name="category" id="category">
+                    <% categories.map((category, index) => { %>
+            <option value="<%= index + 1 %>"><%= category.category %></option>
+        <%  }); %>
+        </select>
         <button type="submit">Add</button>
     </form>
         
