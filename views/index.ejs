@@ -21,7 +21,11 @@
         <% categories.map(category => { %>
             <h3><%= category.category %></h3>
             <ul>
-                
+                <% items.map(item => { %>
+                    <% if(item.category_id == category.id){ %>
+                            <li><%= item.item %></li>
+                        <% }; %>
+               <%  }); %>
             </ul>
         <%  }); %>
 </body>

@@ -1,10 +1,10 @@
 const {Router} = require('express');
-const controller = require('./appController');
-const router = Router();
+const groceryController = require('./appController');
+const groceryRouter = Router();
 
-router.get('/', controller.groceryListGet);
+groceryRouter.get('/', groceryController.groceryListGet);
 
-router.post('/', controller.addItemPost)
+groceryRouter.post('/', groceryController.addItemPost)
 
 
-module.exports = router;
+module.exports = groceryRouter;
