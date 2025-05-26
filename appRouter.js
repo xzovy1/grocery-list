@@ -6,5 +6,4 @@ groceryRouter.get('/', groceryController.groceryListGet);
 
 groceryRouter.post('/', groceryController.addItemPost)
 
-
 module.exports = groceryRouter;
