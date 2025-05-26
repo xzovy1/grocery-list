@@ -53,12 +53,18 @@ li{
 }
 
 .item-name{
-    text-decoration: line-through rgba(255,255,255,0, 0.0);
     margin: 5px;
+
 }
 
 .in-cart{
     text-decoration: line-through;
+    text-decoration-color: transparent;
+    animation-name: strike;
+    animation-duration: 500ms;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 button {
@@ -98,5 +104,14 @@ button {
     }
     button {
       background-color: #f9f9f9;
+    }
+  }
+
+  @keyframes strike{
+    0% {
+        text-decoration-color: transparent;
+    }
+    100% { 
+        text-decoration-color: #454545;
     }
   }
