@@ -19,20 +19,23 @@
     </form>
         
         <% categories.map(category => { %>
-            <h3><%= category.category %></h3>
-            <ul>
-                <% items.map(item => { %>
-                    <% if(item.category_id == category.id){ %>
+            <div class="categories">
+
+                <h3><%= category.category %></h3>
+                <ul>
+                    <% items.map(item => { %>
+                        <% if(item.category_id == category.id){ %>
                             <li>
-                                <%= item.item %>
-                                <form action="/delete" method="post">
+                                <div class="item-name" onclick="return this.classList.toggle('in-cart')"><%= item.item %></div>
+                                <!-- <form action="/delete" method="post">
                                     <button>remove</button>
-                                </form>
+                                </form> -->
                                 
                             </li>
                         <% }; %>
-               <%  }); %>
-            </ul>
+                    <%  }); %>
+                </ul>
+            </div>
         <%  }); %>
-</body>
+    </body>
 </html>
