@@ -1,8 +1,8 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const groceryRouter = require('./appRouter')
-const path = require('node:path')
+const groceryRouter = require('./groceryRouter');
+const path = require('node:path');
 
 
 app.set('view engine', 'ejs');

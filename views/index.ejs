@@ -23,7 +23,13 @@
             <ul>
                 <% items.map(item => { %>
                     <% if(item.category_id == category.id){ %>
-                            <li><%= item.item %></li>
+                            <li>
+                                <%= item.item %>
+                                <form action="/delete" method="post">
+                                    <button>remove</button>
+                                </form>
+                                
+                            </li>
                         <% }; %>
                <%  }); %>
             </ul>
