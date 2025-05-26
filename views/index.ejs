@@ -17,29 +17,28 @@
         </select>
         <button type="submit">Add</button>
     </form>
-        
+    <div class="categories">
         <% categories.map(category => { %>
-            <div class="categories">
+            <div class="category">
                 <% const capital = category.category.slice(0,1).toUpperCase(); 
                    const body = category.category.slice(1); 
-                   const categoryName = capital + body 
-                   console.log(categoryName, capital, body) %>
-                   
+                   const categoryName = capital + body %>
+
                 <h3><%= categoryName %></h3>
                 <ul>
                     <% items.map(item => { %>
                         <% if(item.category_id == category.id){ %>
                             <li>
                                 <div class="item-name" onclick="return this.classList.toggle('in-cart')"><%= item.item %></div>
-                                <!-- <form action="/delete" method="post">
-                                    <button>remove</button>
-                                </form> -->
-                                
                             </li>
                         <% }; %>
                     <%  }); %>
                 </ul>
             </div>
         <%  }); %>
-    </body>
+    <form action="/delete" method="post" id="clear-list-button">
+        <button>Clear List</button>
+    </form>
+    </div>
+</body>
 </html>
