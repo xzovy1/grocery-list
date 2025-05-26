@@ -12,16 +12,16 @@
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
 }
 
 body{
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    place-items: center;
     min-width: 320px;
     min-height: 100vh;
+    place-items: center;
+    justify-content: center;
 }
 
 .categories{
@@ -52,6 +52,11 @@ li{
     justify-content: space-between;
 }
 
+.item-name{
+    text-decoration: line-through rgba(255,255,255,0, 0.0);
+    margin: 5px;
+}
+
 .in-cart{
     text-decoration: line-through;
 }
@@ -63,7 +68,7 @@ button {
     font-size: 1em;
     font-weight: 500;
     font-family: inherit;
-    background-color: #1a1a1a;
+    background-color: #5e5e5e;
     cursor: pointer;
     transition: border-color 0.25s;
   }
