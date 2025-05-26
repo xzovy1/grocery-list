@@ -24,6 +24,15 @@ body{
     justify-content: center;
 }
 
+.login-section{
+    display: flex;
+    flex-direction: column; 
+}
+
+.login-section * {
+    margin: 5px;
+}
+
 .categories{
     padding: 10px;
     display: grid;
