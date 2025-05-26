@@ -7,7 +7,7 @@ async function getCategories(){
 }
 
 async function getItems(){
-    const {rows} = await pool.query("SELECT item, category_id FROM grocery_items")
+    const {rows} = await pool.query("SELECT item, category_id FROM grocery_items");
     return rows;
 }
 
@@ -16,13 +16,13 @@ async function addItem(item, category){
     // await pool.query("SELECT * FROM grocery_items");
 }
 
-async function removeItem(item){
-    await pool.query("DELTE FROM grocery_items WHERE item = $1", [item]);
+async function removeItems(item){
+    await pool.query("DELETE FROM grocery_items");
 }
 
 module.exports = {
     getCategories,
     addItem, 
     getItems,
-    removeItem
+    removeItems
 }

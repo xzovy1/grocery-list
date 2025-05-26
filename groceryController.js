@@ -13,8 +13,7 @@ exports.addItemPost = async (req, res) => {
 }
 
 exports.removeItemPost = async (req,res) => {
-    const {item} = req.body;
-    await db.removeItem(item);
+    await db.removeItems();
     res.redirect('/');
 }
 
