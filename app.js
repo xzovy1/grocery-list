@@ -19,7 +19,7 @@ app.get('/', (req,res) => {
 })
 
 app.get('/calendar', (req, res) => {
-    res.render("calendar")
+    res.render("calendar", {URL:'https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=America%2FEdmonton&showPrint=0&showTitle=0&src=MDkxNGI4N2NmOWIyMTc4ZmZkOTJkYzJlMDliMzc0YTVkYTFhZjRiNmQ3MmRiZjk1N2Q2ZWZjNWM3MTNlNzk2OEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%238E24AA'})
 })
 
 const PORT = process.env.PORT || 3000;

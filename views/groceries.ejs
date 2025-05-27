@@ -36,9 +36,9 @@
                 </ul>
             </div>
         <%  }); %>
-    <form action="/groceries/delete" method="post" id="clear-list-button">
-        <button>Clear List</button>
-    </form>
     </div>
+    <form action="/groceries/delete" method="post" id="clear-list-button">
+        <button onclick="return confirm('Clear List?')">Clear List</button>
+    </form>
 </body>
 </html>
