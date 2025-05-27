@@ -3,30 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log-in</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Groceries</title>
 </head>
 <body>
-    <h1>Groceries</h1>
-    <form action="/" method="POST">
-        <input type="text" name="item" id="item">
-        <select name="category" id="category">
-                    <% categories.map((category, index) => { %>
-            <option value="<%= index + 1 %>"><%= category.category %></option>
-        <%  }); %>
-        </select>
-        <button type="submit">Add</button>
+    <h1>Welcome</h1>
+    <form action="/calendar" method="get" class="login-section">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" >
+        <label for="password">Password:</label>
+        <input type="text" id="password" name="password" >
+        <button>Log in</button>
     </form>
-        
-        <% categories.map(category => { %>
-            <h3><%= category.category %></h3>
-            <ul>
-                <% items.map(item => { %>
-                    <% if(item.category_id == category.id){ %>
-                            <li><%= item.item %></li>
-                        <% }; %>
-               <%  }); %>
-            </ul>
-        <%  }); %>
 </body>
 </html>
