@@ -9,11 +9,11 @@ exports.groceryListGet = async (req, res) => {
 exports.addItemPost = async (req, res) => {
     const {item, category} = req.body
     await db.addItem(item, category)
-    res.redirect('/');
+    res.redirect('/groceries');
 }
 
 exports.removeItemPost = async (req,res) => {
     await db.removeItems();
-    res.redirect('/');
+    res.redirect('/groceries');
 }
 

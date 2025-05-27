@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Groceries</h1>
-    <form action="/" method="POST">
+    <form action="/groceries" method="POST">
         <input type="text" name="item" id="item">
         <select name="category" id="category">
                     <% categories.map((category, index) => { %>
@@ -36,7 +36,7 @@
                 </ul>
             </div>
         <%  }); %>
-    <form action="/delete" method="post" id="clear-list-button">
+    <form action="/groceries/delete" method="post" id="clear-list-button">
         <button>Clear List</button>
     </form>
     </div>
