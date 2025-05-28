@@ -47,6 +47,13 @@ ul{
     margin: 5px;
 }
 
+#info{
+  color: transparent; 
+  font-size: smaller; 
+  text-align: center;
+  transition: color 750ms;
+}
+
 .category{
     background: rgb(255,255,255);
     color: #242424;

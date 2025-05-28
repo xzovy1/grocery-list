@@ -7,16 +7,32 @@
     <title>Groceries</title>
 </head>
 <body>
-    <a href="/calendar">Calendar</a>
-    <h1>Groceries</h1>
+    <div>
+        <a href="/">Home</a>
+        <a href="/calendar">Calendar</a>
+    </div>
+    <h1 style="margin-bottom: 0;">Groceries</h1>
     <form action="/groceries" method="POST">
-        <input type="text" name="item" id="item">
-        <select name="category" id="category">
+        <div id="info">tap a category to add item</div>
+        <label for="item"></label>
+        <input type="text" name="item" id="item" placeholder="Item">
+        <select name="category" id="category" style="display: none;">
                     <% categories.map((category, index) => { %>
             <option value="<%= index + 1 %>"><%= category.category %></option>
         <%  }); %>
         </select>
-        <button type="submit" id="addItemBtn">Add</button>
+        <button type="submit" id="addItemBtn" style="display: none;">Add</button>
+        <script>
+            item.addEventListener('focus', showInfo, true)
+            item.addEventListener('blur', hideInfo, true)
+            function showInfo(){
+                info.style.color = 'inherit'
+            }
+            function hideInfo(){
+                info.style.color = 'transparent'
+            }
+            
+        </script>
     </form>
     <div class="categories">
         <% categories.map(category => { %>
