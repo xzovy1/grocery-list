@@ -58,7 +58,39 @@
     }
 }
 
+@-moz-keyframes rotate{
+    from{
+        transform: rotate3d(0, 1, 1, 180deg);
+        /* transform: rotate3d(1, 0, 0, 20deg); */
+        /* perspective-origin: 0% 50%; */
+    }
+    to{
+        transform: rotate3d(0, -1, -1, 180deg)
+        /* perspective-origin: 100%; */
+    }
+}
+
 @keyframes increaseWidth{
+    from{
+        width: 0px;
+        height: 0px;
+        top: 0;
+        left: 0;
+    }
+    50%{
+        top:80%;
+        left: 80%;
+
+    }
+    to{
+        top: 0;
+        left: 0;
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@-moz-keyframes increaseWidth{
     from{
         width: 0px;
         height: 0px;
