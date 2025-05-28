@@ -121,6 +121,11 @@ button {
     width: 70vw;
     height: 70vh;
   }
+  #weather{
+    background-color: rgba(113, 113, 113, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+  }
   
   iframe{
     width: 100%;

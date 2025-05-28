@@ -13,7 +13,7 @@ const assetsPath = path.join(__dirname, "public");
 
 app.use(express.static(assetsPath));
 app.get('/', (req,res) => {
-    res.render("index.ejs")
+    res.render("index.ejs", {KEY: process.env.KEY})
 })
 
 app.use('/groceries', groceryRouter);

@@ -5,9 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log-in</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="SpinningBox.css">
 </head>
 <body>
     <h1>Welcome</h1>
+    <div id="weather">
+            <div id="currentTemp"></div>
+            <div id="currentHumidity"></div>
+            <div id="time"></div>
+        <script>
+            let data;
+            async function fetchData(){
+                data = await fetch('http://api.weatherapi.com/v1/current.json?key=<%= KEY %>&q=edmonton&aqi=yes').then(r=>r.json()).then(d => (d));
+                console.log(data)
+                currentTemp.textContent = `Current Temp: ${data.current.temp_c}`
+                currentHumidity.textContent = `Current Humidity: ${data.current.humidity}`
+                time.textContent = `As of: ${new Date().toLocaleTimeString()}`
+            }
+            fetchData();
+
+            // currentTemp.textContent = data.current.temp_c
+        </script>
+    </div>
     <form action="/groceries" method="get" class="login-section">
         <!-- <label for="username">Username:</label>
         <input type="text" id="username" name="username" >
@@ -16,5 +35,15 @@
         <!-- <button>Log in</button> -->
          <button>Enter</button>
     </form>
+        <div id="container">
+            <div id='box'>
+                <div id='top' className='face'></div>
+                <div id='bottom' className='face'></div>
+                <div id='front' className='face'></div>
+                <div id='back' className='face'></div>
+                <div id='left' className='face'></div>
+                <div id='right' className='face'></div>
+            </div>
+        </div>
 </body>
 </html>
