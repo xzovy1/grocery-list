@@ -16,7 +16,7 @@
             <option value="<%= index + 1 %>"><%= category.category %></option>
         <%  }); %>
         </select>
-        <button type="submit">Add</button>
+        <button type="submit" id="addItemBtn">Add</button>
     </form>
     <div class="categories">
         <% categories.map(category => { %>
@@ -41,7 +41,10 @@
     <script>
         document.querySelectorAll('.category').forEach(child => {
             child.addEventListener('click', function(){
-                category.selectedIndex = Array.from(this.parentElement.children).indexOf(this)
+                category.selectedIndex = Array.from(this.parentElement.children).indexOf(this);
+                if(item.value !== ''){
+                    addItemBtn.click();
+                }
             });
         });
     </script>
