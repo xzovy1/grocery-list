@@ -7,6 +7,7 @@
     <title>Groceries</title>
 </head>
 <body>
+    <a href="/calendar">Calendar</a>
     <h1>Groceries</h1>
     <form action="/groceries" method="POST">
         <input type="text" name="item" id="item">
@@ -37,6 +38,13 @@
             </div>
         <%  }); %>
     </div>
+    <script>
+        document.querySelectorAll('.category').forEach(child => {
+            child.addEventListener('click', function(){
+                category.selectedIndex = Array.from(this.parentElement.children).indexOf(this)
+            });
+        });
+    </script>
     <form action="/groceries/delete" method="post" id="clear-list-button">
         <button onclick="return confirm('Clear List?')">Clear List</button>
     </form>
