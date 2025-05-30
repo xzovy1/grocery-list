@@ -1,3 +1,4 @@
+#! /usr/bin/node
 require('dotenv').config();
 const express = require('express');
 const app = express();
@@ -5,7 +6,7 @@ const path = require('node:path');
 
 const groceryRouter = require('./groceryRouter');
 
-
+app.set('views', './views');
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: true}));
 
