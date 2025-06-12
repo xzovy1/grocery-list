@@ -49,7 +49,7 @@ ul{
 
 #info{
   color: transparent; 
-  font-size: smaller; 
+  font-size: 10px; 
   text-align: center;
   transition: color 750ms;
 }

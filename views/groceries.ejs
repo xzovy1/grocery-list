@@ -12,8 +12,8 @@
         <a href="/calendar">Calendar</a>
     </div>
     <h1 style="margin-bottom: 0;">Groceries</h1>
+    <div id="info">after typing the item name, tap a category to add the item</div>
     <form action="/groceries" method="POST">
-        <div id="info">tap a category to add item</div>
         <label for="item"></label>
         <input type="text" name="item" id="item" placeholder="Item">
         <select name="category" id="category" style="display: none;">
@@ -55,6 +55,7 @@
         <%  }); %>
     </div>
     <script>
+        // set category index and simulate addItem button click. adds item to db and category
         document.querySelectorAll('.category').forEach(child => {
             child.addEventListener('click', function(){
                 category.selectedIndex = Array.from(this.parentElement.children).indexOf(this);
@@ -63,6 +64,11 @@
                 }
             });
         });
+
+        document.querySelectorAll('item-name').forEach(item => item.addEventListener('click', (e) => {
+            console.log(e)
+            // <%= markInCart%>
+        }))
     </script>
     <form action="/groceries/delete" method="post" id="clear-list-button">
         <button onclick="return confirm('Clear List?')">Clear List</button>
